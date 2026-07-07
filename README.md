@@ -2,5 +2,6 @@
 
 ## Motivator 😌
 its an app to motivate you with simple quotes!
+You can try this bot out in the Hackclub slack!!
 
 Made with 💖 by rapid!
