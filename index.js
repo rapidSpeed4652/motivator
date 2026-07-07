@@ -9,31 +9,33 @@ const app = new App({
   socketMode: true
 });
 
-app.command("/rapidbot-ping", async ({ command, ack, respond }) => {
+app.command("/motivate-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
   await ack();
   const latency = Date.now() - start;
-  await respond({ text: `Pong!\nLatency: ${latency}ms` });
+  await respond({ text: `Let's go!!!\nlatency is ${latency}ms!` });
 });
 
-app.command("/rapidbot-catfact", async ({ ack, respond }) => {
+app.command("/motivateme", async ({ ack, respond }) => {
   await ack();
 
   try {
-    const response = await axios.get("https://catfact.ninja/fact");
-    await respond({ text: `Cat Fact:\n${response.data.fact}` });
+    const response = await axios.get("'https://nodejs-quoteapp.herokuapp.com/");
+    await respond({ text: `Motivational quote: \n${response.data.fact}` });
   } catch (err) {
-    await respond({ text: "Failed to fetch a cat fact." });
+    await respond({ text: "I have failed! :O" });
   }
 });
 
-app.command("/rapidbot-help", async ({ ack, respond }) => {
+app.command("/ineedmotivation", async ({ ack, respond }) => {
   await ack();
   await respond({
     text:
-`Available Commands:
-/rapidbot-ping - Check bot latency
-/rapidbot-catfact - Get a cat fact`
+`Available Decisions :D
+
+/motivate-ping - Check you ping!
+/motivateme - Gives you motivational quotes :3
+/ineedmotivation - This help menu :P`
   });
 });
 
