@@ -4,4 +4,9 @@
 its an app to motivate you with simple quotes!
 You can try this bot out in the Hackclub slack!!
 
+## Disclaimer ⚠️
+AI has been used in some parts of code because i havent learnt js completely yet :P
+
+It has also been used to enhance and upscale the banner.
+
 Made with 💖 by rapid!
