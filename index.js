@@ -21,9 +21,18 @@ app.command("/motivateme", async ({ ack, respond }) => {
 
   try {
     const response = await axios.get("https://zenquotes.io/api/random");
-    await respond({ text: `Motivational quote: \n${response.data.fact}` });
+
+    const quote = response.data[0].q;
+    const author = response.data[0].a;
+
+    await respond({
+      text: `💪 *${quote}*\n— ${author}`
+    });
   } catch (err) {
-    await respond({ text: "I have failed! :O" });
+    console.error(err);
+    await respond({
+      text: "I couldn't fetch a motivational quote right now 😔"
+    });
   }
 });
 
