@@ -20,7 +20,7 @@ app.command("/motivateme", async ({ ack, respond }) => {
   await ack();
 
   try {
-    const response = await axios.get("https://nodejs-quoteapp.herokuapp.com/");
+    const response = await axios.get("https://zenquotes.io/api/random");
     await respond({ text: `Motivational quote: \n${response.data.fact}` });
   } catch (err) {
     await respond({ text: "I have failed! :O" });
